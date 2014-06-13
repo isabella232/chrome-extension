@@ -1,0 +1,25 @@
+{   // Required
+ "manifest_version": 2,
+ "name": "WhitePages",
+ "version": "1.0",
+ "description": "WhitePages PRO API Find Phone Details",
+ "icons": { "128": "assets/images/icon128.png"
+},
+  "browser_action": {
+  "default_icon": {
+    "19": "assets/images/icon19.png"
+  },
+  "default_title": "WhitePages"
+},
+  "permissions": [
+  "tabs", "http://*/*", "https://*/*"
+],
+ "content_scripts" : [
+  {
+    "matches" : ["http://*/*", "https://*/*"],
+    "js" : ["assets/js/reversePhoneScript.js"],
+    "run_at" : "document_idle",
+    "all_frames" : false
+  }
+]
+}
